@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="com.shsxt.ssm.dao.UserDao">
+	
+	<cache readOnly="true" />
+	
+	<resultMap id="RM_User" type="com.shsxt.ssm.model.User">
+        <result property="userId" column="userId"/>
+        <result property="userName" column="userName"/>
+        <result property="password" column="password" />
+        <result property="nation" column="nation" />
+        <result property="phone" column="phone" />
+        <result property="realName" column="RealName" />
+	</resultMap>
+	
+	<select id="find" resultMap="RM_User" parameterType="int" >
+		select userId, userName, password from user
+	</select>
+	
+</mapper>
