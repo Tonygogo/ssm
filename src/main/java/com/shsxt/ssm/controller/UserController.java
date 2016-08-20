@@ -14,7 +14,7 @@ import com.shsxt.ssm.service.UserService;
 @RequestMapping("/user")
 public class UserController {
 	
-	@Autowired
+	@Autowired  
 	private UserService userService;
 	
 	@RequestMapping("/find")
